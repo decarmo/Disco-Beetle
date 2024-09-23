@@ -3,28 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beetlejuice: Disco Elysium Game</title>
+    <title>Beetlejuice: Disco Elysium Edition</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <section id="game-content">
-        <header>
-            <h1>Beetlejuice: The Afterlife Files</h1>
-        </header>
+    <!-- Header/Title Section -->
+    <header>
+        <h1>Beetlejuice: The Afterlife Files</h1>
+        <h2>An Open-World Narrative Adventure</h2>
+    </header>
 
-        <section id="scene">
-            <p id="scene-description">You are in the Afterlife Waiting Room. Click to move around.</p>
+    <!-- Sign-In Section -->
+    <section id="sign-in">
+        <h2>Sign In</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="signIn()">Sign In</button>
+    </section>
 
-            <!-- Game Area with a background and player -->
-            <div id="game-area">
-                <div id="player"></div>
-                <!-- Example clickable zones where the player can move -->
-                <div class="clickable-zone" style="top: 50px; left: 100px;" onclick="movePlayer(100, 50)"></div>
-                <div class="clickable-zone" style="top: 300px; left: 200px;" onclick="movePlayer(200, 300)"></div>
+    <!-- Save Slots Section -->
+    <section id="save-slots" style="display: none;">
+        <h3>Choose Save Slot</h3>
+        <button onclick="loadGame(1)">Save Slot 1</button>
+        <button onclick="loadGame(2)">Save Slot 2</button>
+        <button onclick="loadGame(3)">Save Slot 3</button>
+    </section>
+
+    <!-- Game Content Section -->
+    <section id="game-content" style="display: none;">
+        
+        <!-- Scene Container -->
+        <div id="scene-container">
+            <img id="background-image" src="assets/images/waiting_room.jpg" alt="Background">
+            <div id="characters">
+                <!-- Characters will be dynamically added here -->
             </div>
+        </div>
+
+        <!-- Scene Description -->
+        <section id="scene">
+            <p id="scene-description">You are in the Waiting Room of the Afterlife, sitting next to a shrunken-headed man. Juno is eyeing you from her desk.</p>
+            <div id="npc-dialogue"></div>
         </section>
 
+        <!-- Action Menu -->
+        <section id="action-menu">
+            <h3>Actions</h3>
+            <button onclick="attemptSteal()">Steal Item</button>
+            <button onclick="sneak()">Sneak</button>
+            <p id="sneak-status">You are currently unseen.</p>
+        </section>
+
+        <!-- Inventory Section -->
         <section id="inventory">
             <h3>Inventory</h3>
             <ul id="items">
@@ -32,8 +62,19 @@
                 <li>Contract with Betelgeuse</li>
             </ul>
         </section>
+
+        <!-- Navigation Menu for Fast Travel -->
+        <section id="map" style="display: none;">
+            <h2>Fast Travel</h2>
+            <button onclick="fastTravel('graveyard')">Graveyard</button>
+            <button onclick="fastTravel('afterlife_office')">Afterlife Office</button>
+            <button onclick="fastTravel('deetz_house')">Deetz House</button>
+        </section>
+
     </section>
 
+    <!-- Include JavaScript for functionality -->
     <script src="game.js"></script>
+
 </body>
 </html>
