@@ -10,18 +10,28 @@ header {
     text-shadow: 2px 2px 5px black;
 }
 
-button {
-    background-color: #E64B72;
-    color: white;
-    padding: 10px;
-    border: none;
-    margin: 5px;
-    cursor: pointer;
+/* Game Area Styling */
+#game-area {
+    width: 400px;
+    height: 400px;
+    background-image: url('your-background-image.jpg'); /* Replace with a Beetlejuice-styled background */
+    background-size: cover;
+    position: relative;
+    border: 2px solid white;
+    margin: 0 auto;
+    position: relative;
 }
 
-#scene-description {
-    font-size: 1.2em;
-    padding: 15px;
-    background-color: #333;
-    border-radius: 10px;
+/* Player Character */
+#player {
+    width: 30px;
+    height: 30px;
+    background-color: #E64B72; /* Red for now; could use a sprite image later */
+    position: absolute;
+    top: 50px; /* Starting position */
+    left: 50px;
+    transition: top 0.5s, left 0.5s; /* Smooth movement */
+    border-radius: 50%; /* Circular player */
 }
+
+/* Click
