@@ -3,35 +3,80 @@ body {
     background-color: #222;
     color: #EEE;
     padding: 20px;
+    margin: 0;
 }
 
 header {
     color: #72E64B;
     text-shadow: 2px 2px 5px black;
+    text-align: center;
 }
 
-/* Game Area Styling */
-#game-area {
-    width: 400px;
-    height: 400px;
-    background-image: url('your-background-image.jpg'); /* Replace with a Beetlejuice-styled background */
-    background-size: cover;
-    position: relative;
-    border: 2px solid white;
-    margin: 0 auto;
-    position: relative;
+button {
+    background-color: #E64B72;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-/* Player Character */
-#player {
-    width: 30px;
-    height: 30px;
-    background-color: #E64B72; /* Red for now; could use a sprite image later */
+button:hover {
+    background-color: #C0392B;
+}
+
+#scene-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+#background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#characters {
     position: absolute;
-    top: 50px; /* Starting position */
-    left: 50px;
-    transition: top 0.5s, left 0.5s; /* Smooth movement */
-    border-radius: 50%; /* Circular player */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicking through to background */
 }
 
-/* Click
+.character {
+    position: absolute;
+    /* Example positions */
+    bottom: 50px;
+    left: 50px;
+    width: 100px;
+    height: auto;
+}
+
+#scene-description {
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: rgba(51, 51, 51, 0.8);
+    border-radius: 10px;
+}
+
+#action-menu, #inventory, #map {
+    margin-top: 20px;
+}
+
+#inventory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#inventory li {
+    background-color: #333;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
