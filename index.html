@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beetlejuice: Disco Elysium Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section id="sign-in">
+        <h2>Sign In</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="signIn()">Sign In</button>
+    </section>
+
+    <section id="save-slots" style="display: none;">
+        <h3>Choose Save Slot</h3>
+        <button onclick="loadGame(1)">Save Slot 1</button>
+        <button onclick="loadGame(2)">Save Slot 2</button>
+        <button onclick="loadGame(3)">Save Slot 3</button>
+    </section>
+
+    <section id="game-content" style="display: none;">
+        <header>
+            <h1>Beetlejuice: The Afterlife Files</h1>
+        </header>
+
+        <section id="scene">
+            <p id="scene-description">You are in the Waiting Room of the Afterlife, sitting next to a shrunken-headed man. Juno is eyeing you from her desk.</p>
+            <div id="npc-dialogue"></div>
+        </section>
+
+        <section id="action-menu">
+            <h3>Actions</h3>
+            <button onclick="attemptSteal()">Steal Item</button>
+            <button onclick="sneak()">Sneak</button>
+            <p id="sneak-status">You are currently unseen.</p>
+        </section>
+
+        <section id="inventory">
+            <h3>Inventory</h3>
+            <ul id="items">
+                <li>Strange Sandworm Figurine</li>
+                <li>Contract with Betelgeuse</li>
+            </ul>
+        </section>
+    </section>
+
+    <script src="game.js"></script>
+</body>
+</html>
